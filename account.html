@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Демонстраційна сторінка особистого кабінету FitLife без реєстрації та серверного збереження.">
+<meta name="theme-color" content="#f6f7f4">
+<title>Особистий кабінет | FitLife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="FitLife — на головну"><span class="brand-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 19.5h5l3-8 5.5 13 3.2-8H27" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>FitLife<span class="bilingual"> / Live well</span></a>
+    <button class="menu-toggle" aria-label="Відкрити меню" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Основна навігація"><a href="index.html" class="">Головна<span class="bilingual"> / Home</span></a><a href="workouts.html" class="">Тренування<span class="bilingual"> / Workouts</span></a><a href="nutrition.html" class="">Харчування<span class="bilingual"> / Nutrition</span></a><a href="blog.html" class="">Блог<span class="bilingual"> / Blog</span></a><a href="contact.html" class="">Контакти<span class="bilingual"> / Contact</span></a><a href="account.html" class="active">Кабінет<span class="bilingual"> / Account</span></a><a class="btn nav-cta mobile-only" href="workouts.html">Знайти тренування ↗</a></nav>
+    <a class="btn nav-cta" href="workouts.html">Знайти тренування ↗</a>
+  </div>
+</header>
+<main>
+
+<section class="page-hero"><div class="container"><div class="eyebrow">Твій простір / Your space</div><h1>Твій шлях. Твій<br><span style="color:#6a9b45">власний прогрес.</span></h1><p>Це демонстраційний кабінет без реєстрації. Ти можеш відмічати звички в цьому браузері — дані зберігаються локально на твоєму пристрої, а не на сервері.</p></div></section>
+<section class="profile-panel container"><div class="form-card"><div class="profile-top"><div class="avatar">✦</div><div><div class="eyebrow" style="margin-bottom:7px">Привіт, друже!</div><h2 style="font-size:1.8rem;margin-bottom:5px">Твій FitLife-план</h2><p style="margin:0">Маленькі кроки — сталі зміни.</p></div></div><div class="profile-stats"><div class="profile-stat"><strong id="habitCount">0/3</strong><span>Звички сьогодні</span></div><div class="profile-stat"><strong id="streakCount">0</strong><span>Відміток усього</span></div><div class="profile-stat"><strong>1%</strong><span>Краще щодня</span></div></div><h3>Відміть, що вже зроблено сьогодні</h3><div class="habit-list" style="display:grid;gap:13px;margin:20px 0"><label class="habit-item"><input type="checkbox" data-habit="move" style="width:auto;margin-right:10px"> Я сьогодні рухався / рухалася щонайменше 15 хвилин</label><label class="habit-item"><input type="checkbox" data-habit="water" style="width:auto;margin-right:10px"> Я регулярно пив / пила воду</label><label class="habit-item"><input type="checkbox" data-habit="rest" style="width:auto;margin-right:10px"> Я виділив / виділила час на відновлення</label></div><div class="notice">Дані про звички зберігаються тільки в локальному сховищі цього браузера. Очищення даних браузера може їх видалити. Тут немає справжнього акаунта, входу чи синхронізації між пристроями.</div><div class="actions" style="margin-top:20px"><a class="btn" href="workouts.html">Обрати тренування ↗</a><a class="btn btn-outline" href="nutrition.html">Інструменти харчування</a></div></div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div><a class="brand" href="index.html"><span class="brand-mark">↗</span>FitLife</a><p style="max-width:340px;margin-top:14px">Твій простір для руху, збалансованого харчування та кращого самопочуття.<br><span class="bilingual">Your space for movement, balanced nutrition and feeling better.</span></p></div>
+      <div class="footer-links"><a href="workouts.html">Тренування</a><a href="nutrition.html">Харчування</a><a href="blog.html">Блог</a><a href="contact.html">Контакти</a><a href="account.html">Особистий кабінет</a></div>
+    </div>
+    <div class="copyright"><span>© 2026 Круду Олександр | <a href="mailto:krudualex3@gmail.com">krudualex3@gmail.com</a></span><span>Створено з турботою про активне життя · Made for an active life</span></div>
+  </div>
+</footer>
+<script src="script.js"></script>
+<script>
+(()=>{const keys=['move','water','rest'];const today=new Date().toISOString().slice(0,10);let saved={};try{saved=JSON.parse(localStorage.getItem('fitlife-habits')||'{}')}catch{}if(saved.date!==today)saved={date:today,done:{}};keys.forEach(k=>{const el=document.querySelector('[data-habit="'+k+'"]');el.checked=!!saved.done?.[k];el.addEventListener('change',()=>{saved.done=saved.done||{};saved.done[k]=el.checked;try{localStorage.setItem('fitlife-habits',JSON.stringify(saved))}catch{}update()})});function update(){const done=keys.filter(k=>saved.done?.[k]).length;document.getElementById('habitCount').textContent=done+'/3';let total=0;try{const all=JSON.parse(localStorage.getItem('fitlife-habit-total')||'{}');total=all.total||0;const prev=all.last||{};const count=keys.filter(k=>saved.done?.[k]).length;const currentSig=today+':'+count;if(count>0&&prev.sig!==currentSig){total+=count;localStorage.setItem('fitlife-habit-total',JSON.stringify({total,last:{sig:currentSig}}))}}catch{}document.getElementById('streakCount').textContent=total}update()})();
+</script>
+</body>
+</html>

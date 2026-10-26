@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Зв'яжіться з командою FitLife або залиште відгук про демонстраційний сайт.">
+<meta name="theme-color" content="#f6f7f4">
+<title>Контакти | FitLife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="FitLife — на головну"><span class="brand-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 19.5h5l3-8 5.5 13 3.2-8H27" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>FitLife<span class="bilingual"> / Live well</span></a>
+    <button class="menu-toggle" aria-label="Відкрити меню" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Основна навігація"><a href="index.html" class="">Головна<span class="bilingual"> / Home</span></a><a href="workouts.html" class="">Тренування<span class="bilingual"> / Workouts</span></a><a href="nutrition.html" class="">Харчування<span class="bilingual"> / Nutrition</span></a><a href="blog.html" class="">Блог<span class="bilingual"> / Blog</span></a><a href="contact.html" class="active">Контакти<span class="bilingual"> / Contact</span></a><a href="account.html" class="">Кабінет<span class="bilingual"> / Account</span></a><a class="btn nav-cta mobile-only" href="workouts.html">Знайти тренування ↗</a></nav>
+    <a class="btn nav-cta" href="workouts.html">Знайти тренування ↗</a>
+  </div>
+</header>
+<main>
+
+<section class="page-hero"><div class="container"><div class="eyebrow">Ми на зв’язку / Let's connect</div><h1>Є запитання?<br><span style="color:#6a9b45">Напиши нам.</span></h1><p>Маєш ідею, пропозицію або хочеш поділитися відгуком? Використай форму нижче. Це демонстраційний сайт-портфоліо, тому форма не надсилає дані на сервер.</p></div></section>
+<section class="section" style="padding-top:10px"><div class="container contact-grid"><aside class="contact-info"><div class="eyebrow" style="color:var(--green)">Контактна інформація</div><h2 style="font-size:2rem">Створюймо здорові звички разом.</h2><p>FitLife — концепція цифрової платформи для спорту та здорового способу життя.</p><p style="margin-top:30px">Електронна пошта автора</p><a href="mailto:krudualex3@gmail.com">krudualex3@gmail.com</a><p style="margin-top:30px">Мова платформи</p><strong>Українська / English</strong><p style="margin-top:30px" class="bilingual">Demo project · Portfolio website</p></aside>
+<div class="form-card"><h2 style="font-size:2rem">Залишити повідомлення</h2><p>Заповни поля — сайт перевірить форму та покаже підготовлений текст повідомлення.</p><form id="contactForm"><div class="form-grid"><div class="form-group"><label for="contactName">Ім’я</label><input id="contactName" name="name" autocomplete="name" required placeholder="Твоє ім’я"></div><div class="form-group"><label for="contactEmail">Електронна пошта</label><input id="contactEmail" name="email" type="email" autocomplete="email" required placeholder="name@example.com"></div><div class="form-group" style="grid-column:1/-1"><label for="contactTopic">Тема</label><select id="contactTopic"><option>Відгук про сайт</option><option>Пропозиція співпраці</option><option>Запитання про FitLife</option><option>Інше</option></select></div><div class="form-group" style="grid-column:1/-1"><label for="contactMessage">Повідомлення</label><textarea id="contactMessage" class="field" rows="5" required placeholder="Напиши своє повідомлення…"></textarea></div></div><button class="btn" type="submit" style="margin-top:18px">Підготувати повідомлення ↗</button></form><div id="contactResult" class="result" aria-live="polite"></div><p class="notice" style="margin-top:16px">Конфіденційність: дані залишаються у браузері. Щоб реально надсилати повідомлення, потрібно під’єднати сервер або сторонній сервіс форми.</p></div></div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div><a class="brand" href="index.html"><span class="brand-mark">↗</span>FitLife</a><p style="max-width:340px;margin-top:14px">Твій простір для руху, збалансованого харчування та кращого самопочуття.<br><span class="bilingual">Your space for movement, balanced nutrition and feeling better.</span></p></div>
+      <div class="footer-links"><a href="workouts.html">Тренування</a><a href="nutrition.html">Харчування</a><a href="blog.html">Блог</a><a href="contact.html">Контакти</a><a href="account.html">Особистий кабінет</a></div>
+    </div>
+    <div class="copyright"><span>© 2026 Круду Олександр | <a href="mailto:krudualex3@gmail.com">krudualex3@gmail.com</a></span><span>Створено з турботою про активне життя · Made for an active life</span></div>
+  </div>
+</footer>
+<script src="script.js"></script>
+<script>document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('contactName').value.trim(),email=document.getElementById('contactEmail').value.trim(),topic=document.getElementById('contactTopic').value,msg=document.getElementById('contactMessage').value.trim();const box=document.getElementById('contactResult');box.innerHTML='<strong>Форму перевірено!</strong><p>Це демонстрація: повідомлення не було надіслано. Скопіюй текст нижче або надішли його вручну на електронну пошту автора.</p><textarea class="field" rows="6" readonly></textarea><button type="button" class="btn btn-outline" id="copyContact" style="margin-top:12px">Скопіювати текст</button>';const text='Тема: '+topic+'\\nІм’я: '+name+'\\nEmail: '+email+'\\n\\n'+msg;box.querySelector('textarea').value=text;box.classList.add('show');document.getElementById('copyContact').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(text);document.getElementById('copyContact').textContent='Скопійовано ✓'}catch{box.querySelector('textarea').select()}})});</script>
+</body>
+</html>
